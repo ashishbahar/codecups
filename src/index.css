@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.container {
+    max-width: 1550px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.min-container {
+    max-width: 1350px !important;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+* {
+    font-family: "Open Sans", sans-serif;
+
+}
