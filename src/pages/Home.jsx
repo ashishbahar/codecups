@@ -1,6 +1,7 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import CounterSection from "../component/Counter";
+import HeroSection from "../component/HeroSection";
 const clientLogos = [
   "./client/client (1).png",
   "./client/client (1).svg",
@@ -17,7 +18,7 @@ const Home = () => {
   return (
     <div className=" bg-white">
       <div className="container ">
-        <div className="  md:px-4 flex flex-lg-row flex-col-reverse bg-white   lg:pt-[5px] ">
+        <div className="  md:px-4 flex flex-lg-row  bg-white   lg:pt-[5px] ">
           <div className=" px-[16px] py-[25px] lg:w-3/5 w-full md:rounded-xl lg:px-[100px]  bg-[#e3f0ff] lg:py-[80px] ">
             <p className=" text-black text-sm mb-4 mt-4 ">
               👋 Hi We Are
@@ -36,6 +37,7 @@ const Home = () => {
               Get Started
             </button>
           </div>
+          <HeroSection/>
         </div>
 
         {/*////////////////////// Brand We Work With \\\\\\\\\\\\\\\\\\\\\\\*/}
