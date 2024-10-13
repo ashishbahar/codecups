@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
-    max-width: 1250px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
+
+
+@media (max-width: 1024px) {
+    .hide-below-1024 {
+      display: none;
+    }
+  }

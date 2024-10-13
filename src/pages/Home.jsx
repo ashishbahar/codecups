@@ -1,5 +1,6 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
+import CounterSection from "../component/Counter";
 const clientLogos = [
   "./client/client (1).png",
   "./client/client (1).svg",
@@ -48,20 +49,20 @@ const Home = () => {
                 Work With
               </h3>
               <div className=" pt-10">
-              <Marquee>
-  {clientLogos.map((logoSrc, index) => (
-    <div
-      key={index}
-      className="flex justify-center items-center w-[200px] h-[100px] mx-[20px] bg-gray-100 border rounded-lg"
-    >
-      <img
-        alt={`client-logo-${index}`}
-        src={logoSrc}
-        className="w-auto h-full object-contain"
-      />
-    </div>
-  ))}
-</Marquee>
+                <Marquee>
+                  {clientLogos.map((logoSrc, index) => (
+                    <div
+                      key={index}
+                      className="flex justify-center items-center w-[200px] h-[100px] mx-[20px] bg-gray-100 border rounded-lg"
+                    >
+                      <img
+                        alt={`client-logo-${index}`}
+                        src={logoSrc}
+                        className="w-auto h-full object-contain"
+                      />
+                    </div>
+                  ))}
+                </Marquee>
 
               </div>
             </div>
@@ -69,21 +70,10 @@ const Home = () => {
             {/* ///////////////////////Section 3\\\\\\\\\\\\\\\\\\\\ */}
             <div className=" lg:py-10">
               <div className="flex py-10">
-                <div className="grid w-3/5 grid-cols-1 sm:grid-cols-2 gap-7">
-                  <div className="bg-blue-500 text-white h-[250px] p-8 rounded-lg shadow-lg">
-                    Box 1
+                  <CounterSection/>
+                  <div className="hide-below-1024">
+                    Box 
                   </div>
-                  <div className="bg-green-500 text-white h-[250px] p-8 rounded-lg shadow-lg">
-                    Box 2
-                  </div>
-                  <div className="bg-red-500 text-white p-8 h-[250px] rounded-lg shadow-lg">
-                    Box 3
-                  </div>
-                  <div className="bg-yellow-500 text-white p-8 h-[250px] rounded-lg shadow-lg">
-                    Box 4
-                  </div>
-                </div>
-                <div></div>
               </div>
             </div>
           </div>
