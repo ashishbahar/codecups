@@ -38,16 +38,45 @@ const Home = () => {
               </h3>
               <div className=" pt-10">
                 <Marquee>
-                  <div className=" w-[200px] h-[80px] mx-[20px] bg-black "></div>
-                  <div className=" w-[200px] h-[80px] mx-[20px] bg-black "></div>
-                  <div className=" w-[200px] h-[80px] mx-[20px] bg-black "></div>
-                  <div className=" w-[200px] h-[80px] mx-[20px] bg-black "></div>
-                  <div className=" w-[200px] h-[80px] mx-[20px] bg-black "></div>
-                  <div className=" w-[200px] h-[80px] mx-[20px] bg-black "></div>
-                  <div className=" w-[200px] h-[80px] mx-[20px] bg-black "></div>
-                  <div className=" w-[200px] h-[80px] mx-[20px] bg-black "></div>
-                  <div className=" w-[200px] h-[80px] mx-[20px] bg-black "></div>
-                  <div className=" w-[200px] h-[80px] mx-[20px] bg-black "></div>
+                  <div className=" w-[200px] h-[80px] mx-[20px]">
+                    <img alt="client" src="./client/client (1).png" className="w-full h-full object-cover"/>
+                  </div>
+                  <div className=" w-[200px] h-[80px] mx-[20px]">
+                  <img alt="client" src="./client/client (1).png" className="w-full h-full object-cover"/>
+
+                  </div>
+                  <div className=" w-[200px] h-[80px] mx-[20px]">
+                  <img alt="client" src="./client/client (1).png" className="w-full h-full object-cover"/>
+
+                  </div>
+                  <div className=" w-[200px] h-[80px] mx-[20px]">
+                  <img alt="client" src="./client/client (1).png" className="w-full h-full object-cover"/>
+
+                  </div>
+                  <div className=" w-[200px] h-[80px] mx-[20px ">
+                  <img alt="client" src="./client/client (1).png" className="w-full h-full object-cover"/>
+
+                  </div>
+                  <div className=" w-[200px] h-[80px] mx-[20px]">
+                  <img alt="client" src="./client/client (1).png" className="w-full h-full object-cover"/>
+
+                  </div>
+                  <div className=" w-[200px] h-[80px] mx-[20px]">
+                  <img alt="client" src="./client/client (1).png" className="w-full h-full object-cover"/>
+
+                  </div>
+                  <div className=" w-[200px] h-[80px] mx-[20px]">
+                  <img alt="client" src="./client/client (1).png" className="w-full h-full object-cover"/>
+
+                  </div>
+                  <div className=" w-[200px] h-[80px] mx-[20px">
+                  <img alt="client" src="./client/client (1).png" className="w-full h-full object-cover"/>
+
+                  </div>
+                  <div className=" w-[200px] h-[80px] mx-[20px]">
+                  <img alt="client" src="./client/client (1).png" className="w-full h-full object-cover"/>
+
+                  </div>
                 </Marquee>
               </div>
             </div>
