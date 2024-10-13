@@ -40,19 +40,19 @@ const HeroSection = () => {
           <Counter end={150} suffix="+" />
         </div>
         <p className="mt-4 text-lg">Worldwide Country has lots of clients</p>
-        <div className="flex mt-4 space-x-2">
+        <div className="flex mt-4 ">
           <img
-            src="./images/avatar1.png" // Replace with avatars
+            src="./avatar (1).webp" // Replace with avatars
             alt="Avatar"
             className="w-10 h-10 rounded-full"
           />
           <img
-            src="./images/avatar2.png"
+            src="./avatar (2).webp"
             alt="Avatar"
             className="w-10 h-10 rounded-full"
           />
           <img
-            src="./images/avatar3.png"
+            src="./avatar (3).webp"
             alt="Avatar"
             className="w-10 h-10 rounded-full"
           />
