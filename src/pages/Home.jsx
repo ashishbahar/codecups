@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className=" bg-white">
       <div className="container ">
-        <div className="  md:px-4 flex flex-lg-row  bg-white   lg:pt-[5px] ">
+        <div className="  md:px-4 flex  lg:flex-row flex-col bg-white   lg:pt-[5px] ">
           <div className=" px-[16px] py-[25px] lg:w-3/5 w-full md:rounded-xl lg:px-[100px]  bg-[#e3f0ff] lg:py-[80px] ">
             <p className=" text-black text-sm mb-4 mt-4 ">
               👋 Hi We Are
@@ -37,7 +37,7 @@ const Home = () => {
               Get Started
             </button>
           </div>
-          <HeroSection/>
+          <HeroSection />
         </div>
 
         {/*////////////////////// Brand We Work With \\\\\\\\\\\\\\\\\\\\\\\*/}
@@ -65,17 +65,20 @@ const Home = () => {
                     </div>
                   ))}
                 </Marquee>
-
               </div>
             </div>
 
             {/* ///////////////////////Section 3\\\\\\\\\\\\\\\\\\\\ */}
             <div className=" lg:py-10">
-              <div className="flex py-10">
-                  <CounterSection/>
-                  <div className="hide-below-1024">
-                    Box 
-                  </div>
+              <div className="flex h-100  justify-between py-10">
+                <CounterSection />
+                <div className="hide-below-1024 w-2/6 ps-10">
+                  <img
+                    src="./chines.webp"
+                    alt="chinesman"
+                    className="w-full h-[600px] rounded-lg "
+                  />
+                </div>
               </div>
             </div>
           </div>

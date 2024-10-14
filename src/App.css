@@ -4,12 +4,12 @@
 
 
 
-@media (max-width: 1024px) {
-    .hide-below-1024 {
-      display: none;
-    }
+@media (max-width: 768px) {
+  .hide-below-1024 {
+    display: none;
   }
+}
 
-  .rounded-tr-custom-small{
-    border-radius: 0px 100px 0px 0px;
-  }
+.rounded-tr-custom-small {
+  border-radius: 0px 100px 0px 0px;
+}
