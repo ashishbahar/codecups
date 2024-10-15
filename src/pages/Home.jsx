@@ -3,16 +3,18 @@ import Marquee from "react-fast-marquee";
 import CounterSection from "../component/Counter";
 import HeroSection from "../component/HeroSection";
 const clientLogos = [
-  "./client/client (1).png",
-  "./client/client (1).svg",
-  "./client/client (1).webp",
-  "./client/client (2).png",
-  "./client/client (2).webp",
-  "./client/client (3).png",
-  "./client/client (3).svg",
-  "./client/client (4).png",
-  "./client/client (4).webp",
-  "./client/client (6).png",
+  "./client/1.png",
+  "./client/2.png",
+  "./client/3.png",
+  "./client/4.png",
+  "./client/5.png",
+  "./client/6.png",
+  "./client/7.png",
+  "./client/8.png",
+  "./client/9.png",
+  "./client/10.png",
+  "./client/11.png",
+  "./client/12.png",
 ];
 const Home = () => {
   return (
@@ -55,12 +57,12 @@ const Home = () => {
                   {clientLogos.map((logoSrc, index) => (
                     <div
                       key={index}
-                      className="flex justify-center items-center w-[200px] h-[100px] mx-[20px] bg-gray-100 border rounded-lg"
+                      className="flex justify-center items-center w-[200px] h-[100px] mx-[20px]  border rounded-lg"
                     >
                       <img
                         alt={`client-logo-${index}`}
                         src={logoSrc}
-                        className="w-auto h-full object-contain"
+                        className="w-3/4 h-full object-contain"
                       />
                     </div>
                   ))}
@@ -79,6 +81,51 @@ const Home = () => {
                     className="w-full h-[600px] rounded-lg "
                   />
                 </div>
+              </div>
+            </div>
+          </div>
+          {/* //////////////////////Section 4/\\\\\\\\\\\\\\\\\\\\\\\ */}
+          <div className="bg-white py-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2  lg:gap-10 px-8">
+              <div className=" relative">
+                <div className="absolute top-10 left-[10%]">
+                  <img
+                    className="world_animate"
+                    width={80}
+                    src="./world.webp"
+                    alt="world"
+                  />
+                </div>
+                <img src="./Section4homepage.webp" alt="Section4homepage" />
+              </div>
+              <div className="lg:ps-10 pt-4">
+                <h3 className="text-black ps-2 text-sm">
+                  We are 😃
+                  <span className="bg-[#f44e4ee2] text-white px-1 font-medium rounded-sm">
+                    CodeCups
+                  </span>{" "}
+                </h3>
+                <h2 className=" tracking-tighter text-5xl pt-1 text-[#020842] font-semibold">
+                  Our Commitment to Client Satisfaction
+                </h2>
+                <p className=" text-[#383838e6] pe-10 pt-5 text-xl font-semibold">
+                  At CodeCups, our commitment to client satisfaction is at the
+                  core of everything we do. We understand clients' success.
+                </p>
+                <ul className=" ps-5 pt-5">
+                  <li className="list-disc text-[#383838e6]  text-lg font-medium ">
+                    Grow your business the right way.
+                  </li>
+                  <li className="list-disc py-3 text-[#383838e6]  text-lg font-medium ">
+                    Let business growth help your business grow.
+                  </li>{" "}
+                  <li className="list-disc text-[#383838e6]  text-lg font-medium ">
+                    Helping you to get better.
+                  </li>
+                </ul>
+                <button className=" bg-[#3333f8dd] font-semibold duration-200 hover:bg-[#fff] border-[2px] border-[#3333f8dd] hover:text-[#3333f8dd] text-white px-[50px] py-[14px] outline-none mt-[30px] rounded-[20px]">
+                  Get Started
+                </button>
               </div>
             </div>
           </div>

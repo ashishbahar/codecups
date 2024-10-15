@@ -22,3 +22,17 @@
     font-family: "Open Sans", sans-serif;
 
 }
+
+.world_animate {
+    animation: world_animate 15s linear infinite;
+}
+
+@keyframes world_animate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
