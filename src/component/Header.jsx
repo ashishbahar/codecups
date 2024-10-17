@@ -11,6 +11,8 @@ import {
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
+  Transition, 
+
 } from '@headlessui/react'
 import {
   ArrowPathIcon,
@@ -36,6 +38,61 @@ const products = [
   { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
   { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
 ]
+
+const market_served = [
+  {
+    name: "Services",
+    items: [
+      "IT Management Services",
+      "Data Tracking Security",
+      "Website Development",
+      "CRM Solutions and Design",
+      "UI/UX Design Services",
+      "Technology Solution",
+      "Software Development"
+    ],
+    links: [
+      "commercial#Airports",
+      "commercial#Halls",
+      "commercial#Hotels",
+      "commercial#Museums",
+      "commercial#Offices",
+      "commercial#Restaurants",
+      "commercial#Schools",
+      "commercial#Hospitals",
+    ],
+    icon: ChartPieIcon,
+  },
+
+  {
+    name: "  Our Fields",
+    items: [
+      "Healthcare",
+      "Banks",
+      "Logistics",
+      "Supermarkets",
+      "Industries",
+      "Hotels",
+      "Fintech"
+    ],
+    links: [
+      "industrial#Airport",
+      "industrial#Power",
+      "industrial#Public",
+      "industrial#Pulp",
+      "industrial#Refineries",
+    ],
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "Product",
+    items: ["  Case Studies", "  Our Pricing", "  Features","  Overview","  New Releases","Solutions"],
+    links: ["food#Beverage", "food#Dairy", "food#Food","food#Beverage", "food#Dairy", "food#Food"],
+    icon: FingerPrintIcon,
+  },
+
+];
+
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
@@ -44,6 +101,18 @@ const callsToAction = [
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const closeMenu = () => {
+    setMobileMenuOpen(false);
+  };
+  const [activePopover, setActivePopover] = useState(null);
+
+  const handlePopoverToggle = (popoverName) => {
+    setActivePopover(activePopover === popoverName ? null : popoverName);
+  };
+
+  const handleLinkClick = () => {
+    setActivePopover(null); // Close all popovers when a link is clicked
+  };
   return (
     <header className="bg-white border-b-2 border-gray-100">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 ">
@@ -102,6 +171,58 @@ export default function Example() {
               </div>
             </PopoverPanel>
           </Popover>
+          <Popover>
+          <PopoverButton
+            className="relative left-0 flex items-center gap-x-1 text-md font-semibold leading-6 text-gray-900"
+            onClick={() => handlePopoverToggle('marketServed')}
+          >
+            Markets Served
+            <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+          </PopoverButton>
+
+          <Transition
+            show={activePopover === 'marketServed'}
+            enter="transition ease-out duration-200"
+            enterFrom="opacity-0 translate-y-1"
+            enterTo="opacity-100 translate-y-0"
+            leave="transition ease-in duration-150"
+            leaveFrom="opacity-100 translate-y-0"
+            leaveTo="opacity-0 translate-y-1"
+          >
+            <PopoverPanel className="absolute left-1/2 z-10 mt-3 flex w-screen max-w-max -translate-x-1/2 px-4 header_container">
+              <div className="w-full flex overflow-hidden bg-white text-md leading-6 shadow-lg ring-1 ring-gray-900/5">
+                <div className="w-full p-2 m-2 flex">
+                  <div className="p-4 flex">
+                    {market_served.map((category) => (
+                      <div
+                        key={category.name}
+                        className="group relative flex-1 items-center gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
+                      >
+                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                          <category.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                        </div>
+                        <div className="flex-auto">
+                          <p className="block font-semibold text-gray-900">{category.name}</p>
+                          <ul className="mt-1 text-gray-600 list-inside">
+                            {category.items.map((item, index) => (
+                              <li key={index}>
+                                <a href={category.links[index]} className="hover:text-textBlue" onClick={handleLinkClick}>
+                                  {item}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </PopoverPanel>
+          </Transition>
+        </Popover>
+
+
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Services
