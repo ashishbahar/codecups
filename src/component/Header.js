@@ -11,6 +11,8 @@ import {
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
+  Transition,
+
 } from '@headlessui/react'
 import {
   ArrowPathIcon,
@@ -36,6 +38,61 @@ const products = [
   { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
   { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
 ]
+
+const services = [
+  {
+    name: "Services",
+    items: [
+      "IT Management Services",
+      "Data Tracking Security",
+      "Website Development",
+      "CRM Solutions and Design",
+      "UI/UX Design Services",
+      "Technology Solution",
+      "Software Development"
+    ],
+    links: [
+      "commercial#Airports",
+      "commercial#Halls",
+      "commercial#Hotels",
+      "commercial#Museums",
+      "commercial#Offices",
+      "commercial#Restaurants",
+      "commercial#Schools",
+      "commercial#Hospitals",
+    ],
+    icon: ChartPieIcon,
+  },
+
+  {
+    name: "  Our Fields",
+    items: [
+      "Healthcare",
+      "Banks",
+      "Logistics",
+      "Supermarkets",
+      "Industries",
+      "Hotels",
+      "Fintech"
+    ],
+    links: [
+      "industrial#Airport",
+      "industrial#Power",
+      "industrial#Public",
+      "industrial#Pulp",
+      "industrial#Refineries",
+    ],
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "Product",
+    items: ["  Case Studies", "  Our Pricing", "  Features", "  Overview", "  New Releases", "Solutions"],
+    links: ["food#Beverage", "food#Dairy", "food#Food", "food#Beverage", "food#Dairy", "food#Food"],
+    icon: FingerPrintIcon,
+  },
+
+];
+
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
@@ -44,16 +101,28 @@ const callsToAction = [
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const closeMenu = () => {
+    setMobileMenuOpen(false);
+  };
+  const [activePopover, setActivePopover] = useState(null);
+
+  const handlePopoverToggle = (popoverName) => {
+    setActivePopover(activePopover === popoverName ? null : popoverName);
+  };
+
+  const handleLinkClick = () => {
+    setActivePopover(null); // Close all popovers when a link is clicked
+  };
   return (
     <header className="bg-white border-b-2 border-gray-100">
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 ">
+      <nav aria-label="Global" className="mx-auto flex max-w-8xl items-center justify-between p-2 lg:px-10 ">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img
-              alt=""
-              src=""
-              className="h-8 w-auto"
+              alt="../logo/logo (1).png"
+              src="../logo/logo (1).png"
+              className="h-16 w-auto"
             />
           </a>
         </div>
@@ -68,8 +137,8 @@ export default function Example() {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-        <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+          <Popover className="relative">
+            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 " onClick={() => handlePopoverToggle('company')}>
               Company
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
             </PopoverButton>
@@ -77,7 +146,9 @@ export default function Example() {
             <PopoverPanel
               transition
               className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-2xl overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in flex"
-            >
+              show={activePopover === 'company'}
+
+           >
               <div className="p-4">
                 {company.map((item) => (
                   <div
@@ -102,51 +173,64 @@ export default function Example() {
               </div>
             </PopoverPanel>
           </Popover>
-          <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+          <Popover>
+            <PopoverButton
+              className="relative left-0 flex items-center gap-x-1 text-md font-semibold leading-6 text-gray-900"
+              onClick={() => handlePopoverToggle('Services')}
+            >
               Services
-              <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
+              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
             </PopoverButton>
 
-            <PopoverPanel
-              transition
-              className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+            <Transition
+            show={activePopover === 'Services'}
+            enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
             >
-              <div className="p-4">
-                {products.map((item) => (
-                  <div
-                    key={item.name}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                  >
-                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                      <item.icon aria-hidden="true" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
-                    </div>
-                    <div className="flex-auto">
-                      <a href={item.href} className="block font-semibold text-gray-900">
-                        {item.name}
-                        <span className="absolute inset-0" />
-                      </a>
-                      <p className="mt-1 text-gray-600">{item.description}</p>
-                    </div>
+              <PopoverPanel className="absolute left-1/2 z-10 mt-3 flex w-screen max-w-max -translate-x-1/2 px-4 header_container">
+                <div className="w-full flex overflow-hidden bg-white text-md leading-6 shadow-lg ring-1 ring-gray-900/5">
+                  <div className="w-full grid grid-cols-3 gap-8 p-6 bg-white ">
+                    {services.map((category) => (
+                      <div key={category.name} className="group flex flex-col space-y-4 border-r-2 border-black-100 p-5">
+                        <div className="flex items-center space-x-3">
+                          {/* <div className="h-12 w-12 rounded-lg bg-gray-50 flex items-center justify-center">
+                            <category.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
+                          </div> */}
+                          <p className="font-semibold text-gray-900">{category.name}</p>
+                        </div>
+                        <ul className="space-y-2">
+                          {category.items.map((item, index) => (
+                            <li key={index}>
+                              <a
+                                href={category.links[index]}
+                                className="text-gray-600 hover:text-blue-600 transition-colors"
+                                onClick={handleLinkClick}
+                              >
+                                {item}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                {callsToAction.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                  >
-                    <item.icon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </PopoverPanel>
+                  <div>
+                    <h1>image</h1>
+                  </div>
+                </div>
+              </PopoverPanel>
+            </Transition>
           </Popover>
+
+
+
+          
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" onClick={() => handlePopoverToggle('Portfolio')}>
               Portfolio
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
             </PopoverButton>
@@ -154,6 +238,8 @@ export default function Example() {
             <PopoverPanel
               transition
               className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+              show={activePopover === 'Portfolio'}
+
             >
               <div className="p-4">
                 {products.map((item) => (
@@ -195,7 +281,7 @@ export default function Example() {
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Contact us
           </a>
-       
+
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">

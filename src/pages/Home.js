@@ -51,7 +51,7 @@ const Home = () => {
                       <img
                         alt={`client-logo-${index}`}
                         src={logoSrc}
-                        className="w-3/4 h-full object-contain"
+                        className="h-full object-contain"
                       />
                     </div>
                   ))}

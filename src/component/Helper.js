@@ -14,8 +14,5 @@ export const clientLogos = [
   "./client/6.png",
   "./client/7.png",
   "./client/8.png",
-  "./client/9.png",
-  "./client/10.png",
-  "./client/11.png",
-  "./client/12.png",
+ 
 ];
