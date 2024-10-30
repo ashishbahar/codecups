@@ -2,20 +2,9 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 import CounterSection from "../component/Counter";
 import HeroSection from "../component/HeroSection";
-const clientLogos = [
-  "./client/1.png",
-  "./client/2.png",
-  "./client/3.png",
-  "./client/4.png",
-  "./client/5.png",
-  "./client/6.png",
-  "./client/7.png",
-  "./client/8.png",
-  "./client/9.png",
-  "./client/10.png",
-  "./client/11.png",
-  "./client/12.png",
-];
+import { boxes, clientLogos } from "../component/Helper";
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <div className=" bg-white">
@@ -35,7 +24,7 @@ const Home = () => {
               In today's competitive business, the demand for efficient and
               cost-effective IT solutions has never been more critical.
             </p>
-            <button className=" bg-[#3333f8dd] font-semibold duration-200 hover:bg-[#e3f0ff] border-[2px] border-[#3333f8dd] hover:text-[#3333f8dd] text-white px-[50px] py-[14px] outline-none mt-[30px] rounded-[20px]">
+            <button className=" bg-[#3333f8dd] font-semibold duration-200 hover:bg-[#e3f0ff] border-[2px] border-[#3333f8dd] hover:text-[#3333f8dd] text-white px-[30px] md:px-[50px] py-[8px] md:py-[14px]  outline-none mt-[30px] mb-[10px] rounded-[20px]">
               Get Started
             </button>
           </div>
@@ -52,7 +41,7 @@ const Home = () => {
                 </span>
                 Work With
               </h3>
-              <div className=" pt-10">
+              <div className=" pt-5 sm:pt-10">
                 <Marquee>
                   {clientLogos.map((logoSrc, index) => (
                     <div
@@ -86,12 +75,11 @@ const Home = () => {
           </div>
           {/* //////////////////////Section 4/\\\\\\\\\\\\\\\\\\\\\\\ */}
           <div className="bg-white py-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2  lg:gap-10 px-8">
+            <div className="grid  grid-cols-1 lg:grid-cols-2  lg:gap-10 px-8">
               <div className=" relative">
                 <div className="absolute top-10 left-[10%]">
                   <img
-                    className="world_animate"
-                    width={80}
+                    className="world_animate md:w-[80px] w-[50px] "
                     src="./world.webp"
                     alt="world"
                   />
@@ -103,32 +91,158 @@ const Home = () => {
                   We are 😃
                   <span className="bg-[#f44e4ee2] text-white px-1 font-medium rounded-sm">
                     CodeCups
-                  </span>{" "}
+                  </span>
                 </h3>
-                <h2 className=" tracking-tighter text-5xl pt-1 text-[#020842] font-semibold">
+                <h2 className=" tracking-tighter lg:text-5xl text-3xl pt-1 text-[#020842] font-semibold">
                   Our Commitment to Client Satisfaction
                 </h2>
-                <p className=" text-[#383838e6] pe-10 pt-5 text-xl font-semibold">
+                <p className=" text-[#383838e6] lg:pe-10 md:pt-5 pt-3 md:text-xl text-md font-semibold">
                   At CodeCups, our commitment to client satisfaction is at the
                   core of everything we do. We understand clients' success.
                 </p>
                 <ul className=" ps-5 pt-5">
-                  <li className="list-disc text-[#383838e6]  text-lg font-medium ">
+                  <li className="list-disc text-[#383838e6] text-md md:text-lg font-medium ">
                     Grow your business the right way.
                   </li>
-                  <li className="list-disc py-3 text-[#383838e6]  text-lg font-medium ">
+                  <li className="list-disc py-2 sm:py-3 text-[#383838e6] text-md md:text-lg font-medium ">
                     Let business growth help your business grow.
-                  </li>{" "}
-                  <li className="list-disc text-[#383838e6]  text-lg font-medium ">
+                  </li>
+                  <li className="list-disc text-[#383838e6] text-md md:text-lg font-medium ">
                     Helping you to get better.
                   </li>
                 </ul>
-                <button className=" bg-[#3333f8dd] font-semibold duration-200 hover:bg-[#fff] border-[2px] border-[#3333f8dd] hover:text-[#3333f8dd] text-white px-[50px] py-[14px] outline-none mt-[30px] rounded-[20px]">
+                <button className=" bg-[#3333f8dd] font-semibold duration-200 hover:bg-[#fff] border-[2px] border-[#3333f8dd] hover:text-[#3333f8dd] text-white px-[30px] md:px-[50px] py-[8px] md:py-[14px] outline-none mt-[30px] rounded-[20px]">
                   Get Started
                 </button>
               </div>
             </div>
+            <div className="md:p-10">
+              <div className="grid pt-10 grid-cols-1 lg:grid-cols-3  lg:gap-10 px-8">
+                <div className="flex  items-center">
+                  <div className=" bg-[#f3baba6c] p-5 rounded-lg">
+                    <img
+                      width={30}
+                      className=" "
+                      src="./usericonsection4.svg"
+                      alt="usericonsection4"
+                    />
+                  </div>
+                  <div className="ps-4">
+                    <p className=" text-2xl text-black font-medium ">
+                      Expert Team Members
+                    </p>
+                    <p className=" text-[#474646] font-normal mt-1 text-md">
+                      We take pride in assembling a diverse and highly skilled.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex  items-center">
+                  <div className=" bg-[#f3baba6c] p-5 rounded-lg">
+                    <img
+                      width={40}
+                      className=" "
+                      src="./headphonesection4.svg"
+                      alt="headphonesection4"
+                    />
+                  </div>
+                  <div className="ps-4">
+                    <p className=" text-2xl text-black font-medium ">
+                      Fastest Customer Service
+                    </p>
+                    <p className=" text-[#474646] font-normal mt-1 text-md">
+                      We pride ourselves on providing the fastest customer
+                      service industry.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex  items-center">
+                  <div className=" bg-[#f3baba6c] p-5 rounded-lg">
+                    <img
+                      width={40}
+                      className=" "
+                      src="./dollarsection4.svg"
+                      alt="usericonsection4"
+                    />
+                  </div>
+                  <div className="ps-4">
+                    <p className=" text-2xl text-black font-medium ">
+                      Reasonable Pricing
+                    </p>
+                    <p className=" text-[#474646] font-normal mt-1 text-md">
+                      We believe in providing reasonable pricing that offers
+                      exceptional.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* /////////////// sction5  Our Specialize\\\\\\\\\\\\\\\\\\\ */}
+            <div className="py-10">
+              <div className=" min-container ">
+                <h3 className="text-black lg:pt-10 ps-2 text-sm text-center">
+                  Our
+                  <span className="bg-[#f44e4ee2] text-white px-1 ms-1 font-medium rounded-sm">
+                    Specialize
+                  </span>
+                </h3>
+                <h2 className="tracking-tighter lg:text-5xl text-3xl pt-1 text-[#020842] font-semibold text-center">
+                  Featured Services
+                </h2>
+                <div className="grid mt-10 gap-4">
+                  {/* First Row: 2 Boxes */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    {boxes.slice(0, 2).map((box) => (
+                      <div
+                        key={box.id}
+                        className="relative pt-[250px] p-4 py-10 rounded-xl shadow overflow-hidden transform transition-transform duration-300 hover:scale-[.98] group"
+                      >
+                        <a href={box.url}>
+                          <div
+                            style={{
+                              backgroundImage: `url(${box.imageUrl})`,
+                              backgroundSize: "cover",
+                              backgroundPosition: "center",
+                            }}
+                            className="absolute  inset-0 transform transition-transform duration-300 group-hover:scale-110"
+                          />
+                          <div className="relative z-10 text-white text-4xl px-4 font-semibold">
+                            <p className="mt-10 pt-10">{box.content}</p>
+                          </div>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Second Row: 3 Boxes */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-4">
+                    {boxes.slice(2).map((box) => (
+                      <div
+                        key={box.id}
+                        className="relative pt-[250px] p-4 py-10 rounded-xl shadow overflow-hidden transform transition-transform duration-300 hover:scale-[.98] group"
+                      >
+                        <a href={box.url}>
+                          <div
+                            style={{
+                              backgroundImage: `url(${box.imageUrl})`,
+                              backgroundSize: "cover",
+                              backgroundPosition: "center",
+                            }}
+                            className="absolute inset-0 transform transition-transform duration-300 group-hover:scale-110"
+                          />
+                          <div className="relative z-10 text-white text-4xl px-4 font-semibold">
+                            <p className="mt-10 pt-10">{box.content}</p>
+                          </div>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          {/* ///////////////////// Section 5\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
+
+          <div></div>
         </div>
       </div>
     </div>
