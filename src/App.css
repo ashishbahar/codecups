@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 
+.background-gradient-hero {
+  background: linear-gradient(to right, #7426ef, #00c3cc, #41ba5b);
+}
+.rounded-tr-custom-small {
+  border-radius: 0px 100px 0px 0px;
+}
 
 @media (max-width: 768px) {
   .hide-below-1024 {
     display: none;
   }
-}
-
-.rounded-tr-custom-small {
-  border-radius: 0px 100px 0px 0px;
 }
