@@ -1,69 +1,43 @@
-import React from 'react'
+import React from 'react';
 
-const Technologies = () => {
-    const [activeTab, setActiveTab] = React.useState(0);
+const Technologies = ({ tabs }) => {
+  const [activeTab, setActiveTab] = React.useState(0);
 
-    const tabs = [
-        {
-          name: "Web Platform",
-          content: "We use modern front-end technologies like React, Vue, and Angular.",
-          logos: ["/path-to-logo/react.png", "/path-to-logo/vue.png", "/path-to-logo/angular.png"],
-        },
-        {
-          name: "Backend Technology",
-          content: "Our backend stack includes Node.js, Django, and more.",
-          logos: ["/path-to-logo/nodejs.png", "/path-to-logo/django.png", "/path-to-logo/ruby.png"],
-        },
-        {
-          name: "Database",
-          content: "We specialize in MySQL, MongoDB, PostgreSQL, and more.",
-          logos: ["/path-to-logo/mysql.png", "/path-to-logo/mongodb.png", "/path-to-logo/postgresql.png"],
-        },
-        {
-          name: "Clouds",
-          content: "AWS, Azure, and Google Cloud are some of our cloud platforms.",
-          logos: ["/path-to-logo/aws.png", "/path-to-logo/azure.png", "/path-to-logo/google-cloud.png"],
-        },
-        {
-          name: "Mobile App",
-          content: "We develop mobile applications using React Native and Flutter.",
-          logos: ["/path-to-logo/react-native.png", "/path-to-logo/flutter.png"],
-        },
-        {
-          name: "Framework",
-          content: "We adopt frameworks that suit project requirements for efficiency.",
-          logos: ["/path-to-logo/express.png", "/path-to-logo/spring.png", "/path-to-logo/laravel.png"],
-        },
-      ];
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6">
-        <h2 className="text-3xl font-semibold text-center mb-6">We Use Technologies</h2>
-        <div className="flex justify-center space-x-4 mb-6">
-          {tabs.map((tab, index) => (
-            <button
+    <div className="max-w-7xl mx-auto py-12 px-6">
+      <h2 className="text-3xl font-bold text-center mb-6 ">
+        We Use <span className='text-blue-600'>Technologies</span>
+      </h2>
+      <div className="flex justify-center space-x-4 mb-6">
+        {tabs.map((tab, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveTab(index)}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+              activeTab === index
+                ? "bg-gradient-to-r from-[#7426ef] to-[#00c3cc] text-white"
+                : "bg-blue-100 text-blue-700 hover:bg-blue-200"
+            }`}
+          >
+            {tab.name}
+          </button>
+        ))}
+      </div>
+      <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+        {/* <p className="text-gray-700 mb-4">{tabs[activeTab].content}</p> */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 mt-4 p-2">
+          {tabs[activeTab].logos.map((logo, index) => (
+            <img
               key={index}
-              onClick={() => setActiveTab(index)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                activeTab === index ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"
-              }`}
-            >
-              {tab.name}
-            </button>
+              src={logo}
+              alt="Technology logo"
+              className="w-full h-[80px] rounded-full bg-white p-4 shadow-md"
+            />
           ))}
         </div>
-        <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-          <p className="text-gray-700 mb-4">{tabs[activeTab].content}</p>
-          <div className="flex justify-center space-x-4 mt-4">
-            {tabs[activeTab].logos.map((logo, index) => (
-              <img key={index} src={logo} alt="Technology logo" className="w-10 h-10" />
-            ))}
-          </div>
-        </div>
       </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Technologies
-
-
-
+export default Technologies;

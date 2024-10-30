@@ -3,7 +3,7 @@ import ServiceHero from "../component/ServiceHero";
 import Sdlc from "../component/Sdlc";
 import Technologies from "../component/Technologies";
 import ContactHero from "../component/ContactHero";
-
+import { Website } from "../component/Helper";
 const WebsiteDevelopment = () => {
   return (
     <div>
@@ -12,11 +12,12 @@ const WebsiteDevelopment = () => {
         heading="Website Development"
       />
       <div className="max-w-6xl mx-auto my-12 px-6 ">
-        <h2 className="text-3xl text-center mt-8 mb-8">
+        <h2 className="text-3xl text-center mt-8 font-bold">
           {" "}
-          Unlock the Full Potential of Your Brand Identity Through Cutting-Edge
           WebSite Development
         </h2>
+        <h4  className="text-xl text-center mb-8 "> Unlock the Full Potential of Your Brand Identity Through Cutting-Edge
+        </h4>
 
         <p className="text-base mb-6">
           In today’s digital landscape, your website is more than just an online
@@ -76,8 +77,8 @@ const WebsiteDevelopment = () => {
         </p>
       </div>
   
-      <Sdlc />
-      <Technologies />
+      {/* <Sdlc /> */}
+      <Technologies tabs={Website}/>
       <ContactHero />
     </div>
   );
