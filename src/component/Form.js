@@ -35,7 +35,7 @@ const Form = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-        emailjs.send('service_w0y4uqi', 'template_8lnxjiz', formData, 'nVMndy3q-jQjrcEiu')
+        emailjs.send('')
 
         .then((response) => {
           console.log('Form submitted successfully:', response.status, response.text);
