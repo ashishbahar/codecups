@@ -31,26 +31,26 @@ export const Website = [
   {
     name: "Backend Technology",
     content: "Our backend stack includes Node.js, Django, and more.",
-    logos: ["/path-to-logo/nodejs.png", "/path-to-logo/django.png", "/path-to-logo/ruby.png"],
+    logos: ["../website_technology/icon_java.svg", "../website_technology/1 (1).png", "../website_technology/icon_ruby.svg", "../website_technology/1 (2).png"],
   },
   {
     name: "Database",
     content: "We specialize in MySQL, MongoDB, PostgreSQL, and more.",
-    logos: ["/path-to-logo/mysql.png", "/path-to-logo/mongodb.png", "/path-to-logo/postgresql.png"],
+    logos: ["../website_technology/1 (5).png", "../website_technology/1 (6).png", "../website_technology/1 (1).webp"],
   },
   {
     name: "Clouds",
     content: "AWS, Azure, and Google Cloud are some of our cloud platforms.",
-    logos: ["/path-to-logo/aws.png", "/path-to-logo/azure.png", "/path-to-logo/google-cloud.png"],
+    logos: ["../website_technology/1 (1).webp", "../website_technology/1 (2).jpg"],
   },
   {
     name: "Mobile App",
     content: "We develop mobile applications using React Native and Flutter.",
-    logos: ["/path-to-logo/react-native.png", "/path-to-logo/flutter.png"],
+    logos: ["../website_technology/icon_react_js.svg", "../website_technology/1 (4).png"],
   },
   {
     name: "Framework",
     content: "We adopt frameworks that suit project requirements for efficiency.",
-    logos: ["/path-to-logo/express.png", "/path-to-logo/spring.png", "/path-to-logo/laravel.png"],
+    logos: ["../website_technology/icon_react_js.svg", "../website_technology/1 (3).png"],
   },
 ];

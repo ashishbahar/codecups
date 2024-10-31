@@ -25,13 +25,13 @@ const Technologies = ({ tabs }) => {
       </div>
       <div className="bg-gray-100 p-6 rounded-lg shadow-md">
         {/* <p className="text-gray-700 mb-4">{tabs[activeTab].content}</p> */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 mt-4 p-2">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4  mt-4 p-2">
           {tabs[activeTab].logos.map((logo, index) => (
             <img
               key={index}
               src={logo}
               alt="Technology logo"
-              className="w-full h-[80px] rounded-full bg-white p-4 shadow-md"
+              className="w-fit h-[80px] rounded-full bg-white p-3 shadow-md"
             />
           ))}
         </div>

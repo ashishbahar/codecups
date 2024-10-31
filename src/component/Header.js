@@ -1,6 +1,6 @@
-'use client'
-
-import { useState } from 'react'
+"use client";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -12,8 +12,7 @@ import {
   PopoverGroup,
   PopoverPanel,
   Transition,
-
-} from '@headlessui/react'
+} from "@headlessui/react";
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -22,22 +21,71 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+} from "@heroicons/react/24/outline";
+import {
+  ChevronDownIcon,
+  PhoneIcon,
+  PlayCircleIcon,
+} from "@heroicons/react/20/solid";
 const company = [
-  { name: 'About us', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Our Pricing', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Portfolio', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Services', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-]
+  {
+    name: "About us",
+    description: "Get a better understanding of your traffic",
+    href: "#",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Our Pricing",
+    description: "Speak directly to your customers",
+    href: "#",
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "Portfolio",
+    description: "Your customers’ data will be safe and secure",
+    href: "#",
+    icon: FingerPrintIcon,
+  },
+  {
+    name: "Services",
+    description: "Connect with third-party tools",
+    href: "#",
+    icon: SquaresPlusIcon,
+  },
+];
 
 const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
+  {
+    name: "Analytics",
+    description: "Get a better understanding of your traffic",
+    href: "#",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Engagement",
+    description: "Speak directly to your customers",
+    href: "#",
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "Security",
+    description: "Your customers’ data will be safe and secure",
+    href: "#",
+    icon: FingerPrintIcon,
+  },
+  {
+    name: "Integrations",
+    description: "Connect with third-party tools",
+    href: "#",
+    icon: SquaresPlusIcon,
+  },
+  {
+    name: "Automations",
+    description: "Build strategic funnels that will convert",
+    href: "#",
+    icon: ArrowPathIcon,
+  },
+];
 
 const services = [
   {
@@ -47,19 +95,17 @@ const services = [
       "Data Tracking Security",
       "Website Development",
       "CRM Solutions and Design",
-      "UI/UX Design Services",
-      "Technology Solution",
-      "Software Development"
+      "Software Development",
+      "App Development"
     ],
     links: [
-      "commercial#Airports",
-      "commercial#Halls",
-      "commercial#Hotels",
-      "commercial#Museums",
-      "commercial#Offices",
-      "commercial#Restaurants",
-      "commercial#Schools",
-      "commercial#Hospitals",
+      "/it-management",
+      "/data-tracking",
+      "/website-development",
+      "/crm-Solution",
+      "/software-development",
+      "/app-development",
+   
     ],
     icon: ChartPieIcon,
   },
@@ -73,7 +119,7 @@ const services = [
       "Supermarkets",
       "Industries",
       "Hotels",
-      "Fintech"
+      "Fintech",
     ],
     links: [
       "industrial#Airport",
@@ -86,20 +132,33 @@ const services = [
   },
   {
     name: "Product",
-    items: ["  Case Studies", "  Our Pricing", "  Features", "  Overview", "  New Releases", "Solutions"],
-    links: ["food#Beverage", "food#Dairy", "food#Food", "food#Beverage", "food#Dairy", "food#Food"],
+    items: [
+      "  Case Studies",
+      "  Our Pricing",
+      "  Features",
+      "  Overview",
+      "  New Releases",
+      "Solutions",
+    ],
+    links: [
+      "food#Beverage",
+      "food#Dairy",
+      "food#Food",
+      "food#Beverage",
+      "food#Dairy",
+      "food#Food",
+    ],
     icon: FingerPrintIcon,
   },
-
 ];
 
 const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
+  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
+  { name: "Contact sales", href: "#", icon: PhoneIcon },
+];
 
 export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const closeMenu = () => {
     setMobileMenuOpen(false);
@@ -115,14 +174,17 @@ export default function Example() {
   };
   return (
     <header className="bg-white border-b-2 border-gray-100">
-      <nav aria-label="Global" className="mx-auto flex max-w-8xl items-center justify-between p-2 lg:px-10 ">
+      <nav
+        aria-label="Global"
+        className="mx-auto flex max-w-8xl items-center justify-between p-2 lg:px-10 "
+      >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <a href="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">CodeCups</span>
             <img
               alt="../logo/logo (1).png"
               src="../logo/logo (1).png"
-              className="h-16 w-auto"
+              className="h-12 w-auto"
             />
           </a>
         </div>
@@ -137,7 +199,7 @@ export default function Example() {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          <Popover className="relative">
+          {/* <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 " onClick={() => handlePopoverToggle('company')}>
               Company
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
@@ -172,19 +234,22 @@ export default function Example() {
                 <h1>insert image here</h1>
               </div>
             </PopoverPanel>
-          </Popover>
+          </Popover> */}
           <Popover>
             <PopoverButton
               className="relative left-0 flex items-center gap-x-1 text-md font-semibold leading-6 text-gray-900"
-              onClick={() => handlePopoverToggle('Services')}
+              onClick={() => handlePopoverToggle("Services")}
             >
               Services
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              <ChevronDownIcon
+                className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
+              />
             </PopoverButton>
 
             <Transition
-            show={activePopover === 'Services'}
-            enter="transition ease-out duration-200"
+              show={activePopover === "Services"}
+              enter="transition ease-out duration-200"
               enterFrom="opacity-0 translate-y-1"
               enterTo="opacity-100 translate-y-0"
               leave="transition ease-in duration-150"
@@ -195,12 +260,17 @@ export default function Example() {
                 <div className="w-full flex overflow-hidden bg-white text-md leading-6 shadow-lg ring-1 ring-gray-900/5">
                   <div className="w-full grid grid-cols-3 gap-8 p-6 bg-white ">
                     {services.map((category) => (
-                      <div key={category.name} className="group flex flex-col space-y-4 border-r-2 border-black-100 p-5">
+                      <div
+                        key={category.name}
+                        className="group flex flex-col space-y-4 border-r-2 border-black-100 p-5"
+                      >
                         <div className="flex items-center space-x-3">
                           {/* <div className="h-12 w-12 rounded-lg bg-gray-50 flex items-center justify-center">
                             <category.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
                           </div> */}
-                          <p className="font-semibold text-gray-900">{category.name}</p>
+                          <p className="font-semibold text-gray-900">
+                            {category.name}
+                          </p>
                         </div>
                         <ul className="space-y-2">
                           {category.items.map((item, index) => (
@@ -226,10 +296,7 @@ export default function Example() {
             </Transition>
           </Popover>
 
-
-
-          
-          <Popover className="relative">
+          {/* <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" onClick={() => handlePopoverToggle('Portfolio')}>
               Portfolio
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
@@ -273,34 +340,43 @@ export default function Example() {
                 ))}
               </div>
             </PopoverPanel>
-          </Popover>
+          </Popover> */}
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Career
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          </a> */}
+          <Link
+            to="/contact"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Contact us
-          </a>
-
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            to="/contact"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Get Started <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </nav>
-      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
+      <Dialog
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+        className="lg:hidden"
+      >
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                alt=""
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                alt="../logo/logo (1).png"
+                src="../logo/logo (1).png"
                 className="h-8 w-auto"
               />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -315,53 +391,89 @@ export default function Example() {
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                    Product
-                    <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none group-data-[open]:rotate-180" />
+                    Services
+                    <ChevronDownIcon
+                      aria-hidden="true"
+                      className="h-5 w-5 flex-none group-data-[open]:rotate-180"
+                    />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
-                      <DisclosureButton
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      >
-                        {item.name}
+              
+                      <DisclosureButton className="w-full">
+                        <div className="w-full flex overflow-hidden bg-white text-md leading-6 shadow-lg ring-1 ring-gray-900/5">
+                          <div className="w-full grid  p-6 bg-white ">
+                            {services.slice(0,1).map((category) => (
+                              <div
+                                key={category.name}
+                                className="group  border-black-100 p-5"
+                              >
+                                <div className="">
+                                  {/* <div className="h-12 w-12 rounded-lg bg-gray-50 flex items-center justify-center">
+                            <category.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
+                          </div> */}
+                                  <p className="font-semibold text-gray-900">
+                                    {/* {category.name} */}
+                                  </p>
+                                </div>
+                                <ul className="">
+                                  {category.items.map((item, index) => (
+                                    <li key={index}>
+                                      <a
+                                        href={category.links[index]}
+                                        className="text-gray-600 hover:text-blue-600 transition-colors"
+                                        onClick={handleLinkClick}
+                                      >
+                                        {item}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        
+                        </div>
                       </DisclosureButton>
-                    ))}
+                 
                   </DisclosurePanel>
                 </Disclosure>
-                <a
+                {/* <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Features
-                </a>
-                <a
+                </a> */}
+                {/* <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Marketplace
-                </a>
-                <a
+                </a> */}
+                {/* <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Company
-                </a>
+                </a> */}
+                <Link
+                  href="/contact"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Contact
+                </Link>
               </div>
               <div className="py-6">
-                <a
+                {/* <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
         </DialogPanel>
       </Dialog>
     </header>
-  )
+  );
 }
