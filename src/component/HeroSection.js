@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 // Counter component
 const Counter = ({ end, suffix }) => {
   const [count, setCount] = useState(0);
@@ -44,7 +44,7 @@ const HeroSection = () => {
         <div className="text-6xl font-bold">
           <Counter end={150} suffix="+" />
         </div>
-        <p className="mt-4 text-lg">Worldwide Country has lots of clients</p>
+        <p className="mt-4 text-lg">Serving clients in 150+ countries worldwide</p>
         <div className="flex mt-4 ">
           <img
             src="./avatar (1).webp" // Replace with avatars
@@ -69,15 +69,15 @@ const HeroSection = () => {
 
       {/* Bottom Left Section */}
       <div className="relative bg-pink-400 text-white p-8 rounded-lg flex flex-col justify-center items-start lg:rounded-tr-custom-small">
-        <button className="text-lg font-semibold bg-white text-pink-600 rounded-full px-4 py-2 mb-2">
-          Data Security
-        </button>
-        <button className="text-lg font-semibold bg-white text-pink-600 rounded-full px-4 py-2 mb-2">
+        <Link to="/crm-Solution" className="text-lg font-semibold bg-white text-pink-600 rounded-full px-4 py-2 mb-2">
+          CRM Solution
+        </Link>
+        <Link to="/website-development" className="text-lg font-semibold bg-white text-pink-600 rounded-full px-4 py-2 mb-2">
           Web Development
-        </button>
-        <button className="text-lg font-semibold bg-white text-pink-600 rounded-full px-4 py-2">
-          Analytics & Optimization
-        </button>
+        </Link>
+        <Link to="/app-development" className="text-lg font-semibold bg-white text-pink-600 rounded-full px-4 py-2">
+          App Development and more
+        </Link>
       </div>
 
       {/* Bottom Right Section */}
