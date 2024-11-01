@@ -90,11 +90,10 @@ const HeroSection = () => {
         }}
       >
         <div className="text-6xl font-bold">
-          <Counter end={88} suffix="%" />
+          <Counter end={100} suffix="%" />
         </div>
         <p className="mt-4 text-lg">
-          get 88% of the best services and growth business
-        </p>
+        Delivering top-notch service quality that ensures 100% client satisfaction!        </p>
       </div>
     </div>
   );

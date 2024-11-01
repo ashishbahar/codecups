@@ -1,6 +1,7 @@
 "use client";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import ClientCard from "./ClientCard";
 import {
   Dialog,
   DialogPanel,
@@ -96,7 +97,7 @@ const services = [
       "Website Development",
       "CRM Solutions and Design",
       "Software Development",
-      "App Development"
+      "App Development",
     ],
     links: [
       "/it-management",
@@ -105,7 +106,6 @@ const services = [
       "/crm-Solution",
       "/software-development",
       "/app-development",
-   
     ],
     icon: ChartPieIcon,
   },
@@ -139,7 +139,6 @@ const services = [
       "  New Releases",
       "Solutions",
       "  FAQ",
-      
     ],
     links: [
       "food#Beverage",
@@ -180,14 +179,14 @@ export default function Example() {
         className="mx-auto flex max-w-8xl items-center justify-between p-2 lg:px-10 "
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">CodeCups</span>
             <img
               alt="../logo/logo (1).png"
               src="../logo/logo (1).png"
               className="h-12 w-auto"
             />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -200,7 +199,10 @@ export default function Example() {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-        <Link to="/about" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            to="/about"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             About us
           </Link>
           <Popover>
@@ -227,7 +229,7 @@ export default function Example() {
               <PopoverPanel className="absolute left-1/2 z-10 mt-3 flex w-screen max-w-max -translate-x-1/2 px-4 header_container">
                 <div className="w-full flex overflow-hidden bg-white text-md leading-6 shadow-lg ring-1 ring-gray-900/5">
                   <div className="w-full grid grid-cols-3 gap-8 p-6 bg-white ">
-                    {services.slice(0,3).map((category) => (
+                    {services.slice(0, 3).map((category) => (
                       <div
                         key={category.name}
                         className="group flex flex-col space-y-4 border-r-2 border-black-100 p-5"
@@ -257,7 +259,11 @@ export default function Example() {
                     ))}
                   </div>
                   <div className="w-1/2">
-                    <img src="../header_image.webp" alt="services" className="h-2/3 w-2/3 m-auto"/>
+                    <img
+                      src="../header_image.webp"
+                      alt="services"
+                      className="h-2/3 w-2/3 m-auto"
+                    />
                   </div>
                 </div>
               </PopoverPanel>
@@ -266,101 +272,67 @@ export default function Example() {
 
           <Popover>
             <PopoverButton
-              className="relative left-0 flex items-center gap-x-1 text-md font-semibold leading-6 text-gray-900"
-              onClick={() => handlePopoverToggle("Fields")}
+              className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
+              onClick={() => handlePopoverToggle("Portfolio")}
             >
-              Fields
-              <ChevronDownIcon
-                className="h-5 w-5 flex-none text-gray-400"
-                aria-hidden="true"
-              />
-            </PopoverButton>
-
-            <Transition
-              show={activePopover === "Fields"}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
-            >
-              <PopoverPanel className="absolute left-1/2 z-10 mt-3 flex w-screen max-w-max -translate-x-1/2 px-4 header_container">
-                <div className="w-full flex overflow-hidden bg-white text-md leading-6 shadow-lg ring-1 ring-gray-900/5">
-                  <div className="w-full gap-8 p-6 bg-white ">
-                    {services.slice(2,3 ).map((category) => (
-                      <div
-                        key={category.name}
-                        className="group flex flex-col p-5"
-                      >
-                        <div className="flex items-center space-x-3">
-                          {/* <div className="h-12 w-12 rounded-lg bg-gray-50 flex items-center justify-center">
-                            <category.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
-                          </div> */}
-                          <p className="font-semibold text-gray-900">
-                            {category.name}
-                          </p>
-                        </div>
-                        <ul className="space-y-2">
-                          {category.items.map((item, index) => (
-                            <li key={index}>
-                              <Link
-                                to={category.links[index]}
-                                className="text-gray-600 hover:text-blue-600 transition-colors"
-                                onClick={handleLinkClick}
-                              >
-                                {item}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </PopoverPanel>
-            </Transition>
-          </Popover>
-
-          <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" onClick={() => handlePopoverToggle('Portfolio')}>
               Portfolio
-              <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
+              <ChevronDownIcon
+                aria-hidden="true"
+                className="h-5 w-5 flex-none text-gray-400"
+              />
             </PopoverButton>
 
             <PopoverPanel
               transition
-              className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-              show={activePopover === 'Portfolio'}
-
+              className="absolute -left-8 top-full z-10  w-screen  overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+              show={activePopover === "Portfolio"}
             >
               <div className="p-4">
-                {products.map((item) => (
-                  <div
-                    key={item.name}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                  >
-                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                      <item.icon aria-hidden="true" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
-                    </div>
-                    <div className="flex-auto">
-                      <a href={item.href} className="block font-semibold text-gray-900">
-                        {item.name}
-                        <span className="absolute inset-0" />
-                      </a>
-                      <p className="mt-1 text-gray-600">{item.description}</p>
-                    </div>
+                <div className="max-w-7xl mx-auto p-8 flex.">
+                  <div className="text-center mb-8">
+                    <h2 className="text-3xl font-bold">Enabling Innovation</h2>
+                    <p className="text-gray-600">
+                      to steadfast success for top globally leading brands
+                    </p>
+                    <button className="mt-4 px-4 py-2 bg-black text-white rounded hover:bg-gray-800">
+                      View all
+                    </button>
                   </div>
-                ))}
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <ClientCard
+                      logo="../client/6.png"
+                      title="A leading digital platform to offer engaging shopping experience to users"
+                    />
+                    <ClientCard
+                      logo="../client/3.png"
+                      title="A mobile app to digitalize & expand KFC's digital footprint"
+                    />
+                    <ClientCard
+                      logo="../client/4.png"
+                      title="A transforming ERP Solution for the world's largest furniture retailer"
+                    />
+                        <ClientCard
+                      logo="../client/5.png"
+                      title="A transforming ERP Solution for the world's largest furniture retailer"
+                    />
+                
+                  </div>
+
+                  
+                </div>
               </div>
-              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                {callsToAction.map((item) => (
+              <div className="grid grid-cols-1 divide-x divide-gray-900/5 bg-gray-50 text-center">
+                {callsToAction.slice(1).map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
                     className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                   >
-                    <item.icon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
+                    <item.icon
+                      aria-hidden="true"
+                      className="h-5 w-5 flex-none text-gray-400"
+                    />
                     {item.name}
                   </a>
                 ))}
@@ -368,7 +340,10 @@ export default function Example() {
             </PopoverPanel>
           </Popover>
 
-          <Link to="/career" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            to="/career"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Career
           </Link>
           <Link
@@ -424,43 +399,40 @@ export default function Example() {
                     />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
-              
-                      <DisclosureButton className="w-full">
-                        <div className="w-full flex overflow-hidden bg-white text-md leading-6 shadow-lg ring-1 ring-gray-900/5">
-                          <div className="w-full grid  p-6 bg-white ">
-                            {services.slice(0,1).map((category) => (
-                              <div
-                                key={category.name}
-                                className="group  border-black-100 p-5"
-                              >
-                                <div className="">
-                                  {/* <div className="h-12 w-12 rounded-lg bg-gray-50 flex items-center justify-center">
+                    <DisclosureButton className="w-full">
+                      <div className="w-full flex overflow-hidden bg-white text-md leading-6 shadow-lg ring-1 ring-gray-900/5">
+                        <div className="w-full grid  p-6 bg-white ">
+                          {services.slice(0, 1).map((category) => (
+                            <div
+                              key={category.name}
+                              className="group  border-black-100 p-5"
+                            >
+                              <div className="">
+                                {/* <div className="h-12 w-12 rounded-lg bg-gray-50 flex items-center justify-center">
                             <category.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
                           </div> */}
-                                  <p className="font-semibold text-gray-900">
-                                    {/* {category.name} */}
-                                  </p>
-                                </div>
-                                <ul className="">
-                                  {category.items.map((item, index) => (
-                                    <li key={index}>
-                                      <a
-                                        href={category.links[index]}
-                                        className="text-gray-600 hover:text-blue-600 transition-colors"
-                                        onClick={handleLinkClick}
-                                      >
-                                        {item}
-                                      </a>
-                                    </li>
-                                  ))}
-                                </ul>
+                                <p className="font-semibold text-gray-900">
+                                  {/* {category.name} */}
+                                </p>
                               </div>
-                            ))}
-                          </div>
-                        
+                              <ul className="">
+                                {category.items.map((item, index) => (
+                                  <li key={index}>
+                                    <a
+                                      href={category.links[index]}
+                                      className="text-gray-600 hover:text-blue-600 transition-colors"
+                                      onClick={handleLinkClick}
+                                    >
+                                      {item}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
                         </div>
-                      </DisclosureButton>
-                 
+                      </div>
+                    </DisclosureButton>
                   </DisclosurePanel>
                 </Disclosure>
                 {/* <a
