@@ -1,9 +1,9 @@
 export const boxes = [
-  { id: 1, content: "IT Management Services", imageUrl: "../it.webp", url:"/vo"},
-  { id: 2, content: "Data Tracking and Security", imageUrl: "../dt.webp" ,url:"/vo"},
-  { id: 3, content: "Website Development", imageUrl: "../wd.webp", url:"/vo"},
-  { id: 4, content: "Modern Technology Solution", imageUrl: "../mts.webp" ,url:"/vo"},
-  { id: 5, content: "UI/UX Design Services", imageUrl: "../uiux.webp" ,url:"/vo"},
+  { id: 1, content: "IT Management Services", imageUrl: "../it.webp", url:"/it-management"},
+  { id: 2, content: "Data Tracking and Security", imageUrl: "../dt.webp" ,url:"/data-tracking"},
+  { id: 3, content: "Website Development", imageUrl: "../wd.webp", url:"/website-development"},
+  { id: 4, content: "(CRM) Solutions and Design", imageUrl: "../mts.webp" ,url:"/crm-Solution"},
+  { id: 5, content: "Software Development", imageUrl: "../uiux.webp" ,url:"/software-development"},
 ];
 export const clientLogos = [
   "./client/1.png",

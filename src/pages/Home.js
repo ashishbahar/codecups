@@ -4,6 +4,7 @@ import CounterSection from "../component/Counter";
 import HeroSection from "../component/HeroSection";
 import { boxes, clientLogos } from "../component/Helper";
 import { Link } from "react-router-dom";
+import Ourwork from "../component/Ourwork";
 
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
       <div className="h-[50px]"></div>
       <div className="container">
         <div className="  md:px-4 flex  lg:flex-row flex-col bg-white   lg:pt-[5px] ">
-          <div className=" px-[16px] py-[25px] lg:w-3/5 w-full md:rounded-xl lg:px-[100px]  bg-[#e3f0ff] lg:py-[80px] ">
+          <div className=" px-[16px] py-[25px] lg:w-4/5 w-full md:rounded-xl lg:px-[100px]  bg-[#e3f0ff] lg:py-[80px] ">
             <p className=" text-black text-sm mb-4 mt-4 ">
               👋  We Are
               <span className="bg-[#f44e4ee2] text-white px-1 font-medium rounded-sm">
@@ -62,7 +63,7 @@ const Home = () => {
                   At CodeCups, our commitment to client satisfaction is at the
                   core of everything we do. We understand clients' success.
                 </p>
-                <ul className=" ps-5 pt-5">
+                <ul className=" ps-5 pt-5 mb-6">
                   <li className="list-disc text-[#383838e6] text-md md:text-lg font-medium ">
                     Grow your business the right way.
                   </li>
@@ -73,9 +74,9 @@ const Home = () => {
                     Helping you to get better.
                   </li>
                 </ul>
-                <button className=" bg-[#3333f8dd] font-semibold duration-200 hover:bg-[#fff] border-[2px] border-[#3333f8dd] hover:text-[#3333f8dd] text-white px-[30px] md:px-[50px] py-[8px] md:py-[14px] outline-none mt-[30px] rounded-[20px]">
+                <Link to="/contact" className=" bg-[#3333f8dd] font-semibold duration-200 hover:bg-[#fff] border-[2px] border-[#3333f8dd] hover:text-[#3333f8dd] text-white px-[30px] md:px-[50px] py-[8px] md:py-[14px] outline-none mt-[30px] rounded-[20px]">
                   Get Started
-                </button>
+                </Link>
               </div>
             </div>
             <div className="md:p-10">
@@ -158,7 +159,7 @@ const Home = () => {
                         key={box.id}
                         className="relative pt-[250px] p-4 py-10 rounded-xl shadow overflow-hidden transform transition-transform duration-300 hover:scale-[.98] group"
                       >
-                        <a href={box.url}>
+                        <Link to={box.url}>
                           <div
                             style={{
                               backgroundImage: `url(${box.imageUrl})`,
@@ -170,7 +171,7 @@ const Home = () => {
                           <div className="relative z-10 text-white text-4xl px-4 font-semibold">
                             <p className="mt-10 pt-10">{box.content}</p>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     ))}
                   </div>
@@ -182,7 +183,7 @@ const Home = () => {
                         key={box.id}
                         className="relative pt-[250px] p-4 py-10 rounded-xl shadow overflow-hidden transform transition-transform duration-300 hover:scale-[.98] group"
                       >
-                        <a href={box.url}>
+                        <Link to={box.url}>
                           <div
                             style={{
                               backgroundImage: `url(${box.imageUrl})`,
@@ -194,7 +195,7 @@ const Home = () => {
                           <div className="relative z-10 text-white text-4xl px-4 font-semibold">
                             <p className="mt-10 pt-10">{box.content}</p>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     ))}
                   </div>
@@ -203,46 +204,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className=" min-container">
-            <div className=" py-[30px]">
-              <h3 className="text-xl text-center text-black">
-                <span className="bg-[#f44e4ee2] text-white px-1 font-medium rounded-sm">
-                  Brand We
-                </span>
-                Work With
-              </h3>
-              <div className=" pt-5 sm:pt-10">
-                <Marquee>
-                  {clientLogos.map((logoSrc, index) => (
-                    <div
-                      key={index}
-                      className="flex justify-center items-center w-[200px] h-[100px] mx-[20px]  border rounded-lg"
-                    >
-                      <img
-                        alt={`client-logo-${index}`}
-                        src={logoSrc}
-                        className="h-full object-contain"
-                      />
-                    </div>
-                  ))}
-                </Marquee>
-              </div>
-            </div>
-
-            {/* ///////////////////////Section 3\\\\\\\\\\\\\\\\\\\\ */}
-            <div className=" lg:py-10">
-              <div className="flex h-100  justify-between py-10">
-                <CounterSection />
-                <div className="hide-below-1024 w-2/6 ps-10">
-                  <img
-                    src="./chines.webp"
-                    alt="chinesman"
-                    className="w-full h-[600px] rounded-lg "
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+         <Ourwork/>
           {/* ///////////////////// Section 5\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
 
           <div></div>

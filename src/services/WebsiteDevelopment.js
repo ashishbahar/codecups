@@ -4,6 +4,7 @@ import Sdlc from "../component/Sdlc";
 import Technologies from "../component/Technologies";
 import ContactHero from "../component/ContactHero";
 import { Website } from "../component/Helper";
+import Ourwork from "../component/Ourwork";
 const WebsiteDevelopment = () => {
   return (
     <div>
@@ -80,6 +81,7 @@ const WebsiteDevelopment = () => {
       {/* <Sdlc /> */}
       <Technologies tabs={Website}/>
       <ContactHero />
+      <Ourwork/>
     </div>
   );
 };

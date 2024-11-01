@@ -13,11 +13,17 @@ import SoftwareDevelopment from "./services/SoftwareDevelopment";
 import CRM from "./services/CRM-Solution";
 import DataTracking from "./services/Data-Tracking";
 import AppDevelopment from "./services/AppDevelopment";
+import Career from "./pages/Career";
+import Portfolio from "./pages/Portfolio";
+import About from "./pages/About";
+import Scroll from "./component/Scroll";
+import Footer from "./pages/Footer";
 
 const App = () => {
   return (
     <Router>
       <div>
+      <Scroll/>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,11 +38,14 @@ const App = () => {
 
 
           {/* Add more routes here as needed */}
-
-
+          <Route path="/about" element={<About />} /> {/* Services page route */}
+          <Route path="/portfolio" element={<Portfolio />} /> {/* Services page route */}
+          <Route path="/Career" element={<Career />} /> {/* Services page route */}
           <Route path="/Contact" element={<Contact />} /> {/* Services page route */}
 
         </Routes>
+        <Footer/>
+
       </div>
     </Router>
   );

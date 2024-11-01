@@ -154,7 +154,7 @@ const services = [
 
 const callsToAction = [
   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
+  { name: "Contact ", href: "/contact", icon: PhoneIcon },
 ];
 
 export default function Example() {
@@ -291,12 +291,15 @@ export default function Example() {
                 <div className="max-w-7xl mx-auto p-8 flex.">
                   <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold">Enabling Innovation</h2>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 mb-4">
                       to steadfast success for top globally leading brands
                     </p>
-                    <button className="mt-4 px-4 py-2 bg-black text-white rounded hover:bg-gray-800">
+                    <Link
+                      to="/portfolio"
+                      className="mt-8 px-4 py-2 bg-black text-white rounded hover:bg-gray-800"
+                    >
                       View all
-                    </button>
+                    </Link>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -312,14 +315,11 @@ export default function Example() {
                       logo="../client/4.png"
                       title="A transforming ERP Solution for the world's largest furniture retailer"
                     />
-                        <ClientCard
+                    <ClientCard
                       logo="../client/5.png"
                       title="A transforming ERP Solution for the world's largest furniture retailer"
                     />
-                
                   </div>
-
-                  
                 </div>
               </div>
               <div className="grid grid-cols-1 divide-x divide-gray-900/5 bg-gray-50 text-center">
@@ -390,6 +390,12 @@ export default function Example() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
+              <Link
+                  to="/about"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  About
+                </Link>
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                     Services
@@ -415,16 +421,16 @@ export default function Example() {
                                   {/* {category.name} */}
                                 </p>
                               </div>
-                              <ul className="">
+                              <ul className="text-left">
                                 {category.items.map((item, index) => (
                                   <li key={index}>
-                                    <a
-                                      href={category.links[index]}
+                                    <Link
+                                       to={category.links[index]}
                                       className="text-gray-600 hover:text-blue-600 transition-colors"
                                       onClick={handleLinkClick}
                                     >
                                       {item}
-                                    </a>
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>
@@ -435,24 +441,64 @@ export default function Example() {
                     </DisclosureButton>
                   </DisclosurePanel>
                 </Disclosure>
-                {/* <a
-                  href="#"
+           
+                <Link
+                  to="/portfolio"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Features
-                </a> */}
-                {/* <a
-                  href="#"
+                  Portfolio
+                </Link>
+                <Link
+                  to="/career"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Marketplace
-                </a> */}
-                {/* <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </a> */}
+                  Career
+                </Link>
+                <Disclosure as="div" className="-mx-3">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                    More
+                    <ChevronDownIcon
+                      aria-hidden="true"
+                      className="h-5 w-5 flex-none group-data-[open]:rotate-180"
+                    />
+                  </DisclosureButton>
+                  <DisclosurePanel className="mt-2 space-y-2">
+                    <DisclosureButton className="w-full">
+                      <div className="w-full flex overflow-hidden bg-white text-md leading-6 shadow-lg ring-1 ring-gray-900/5">
+                        <div className="w-full grid  p-6 bg-white ">
+                          {services.slice(2, 3).map((category) => (
+                            <div
+                              key={category.name}
+                              className="group  border-black-100 p-5"
+                            >
+                              <div className="">
+                                {/* <div className="h-12 w-12 rounded-lg bg-gray-50 flex items-center justify-center">
+                            <category.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
+                          </div> */}
+                                <p className="font-semibold text-gray-900">
+                                  {/* {category.name} */}
+                                </p>
+                              </div>
+                              <ul className="text-left">
+                                {category.items.map((item, index) => (
+                                  <li key={index}>
+                                    <Link
+                                       to={category.links[index]}
+                                      className="text-gray-600 hover:text-blue-600 transition-colors"
+                                      onClick={handleLinkClick}
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </DisclosureButton>
+                  </DisclosurePanel>
+                </Disclosure>
                 <Link
                   href="/contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"

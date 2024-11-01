@@ -4,6 +4,7 @@ import Sdlc from "../component/Sdlc";
 import Technologies from "../component/Technologies";
 import ContactHero from "../component/ContactHero";
 import { Website } from "../component/Helper";
+import Ourwork from "../component/Ourwork";
 const DataTracking = () => {
   return (
     <div>
@@ -65,6 +66,7 @@ const DataTracking = () => {
       {/* <Sdlc /> */}
       <Technologies tabs={Website} />
       <ContactHero />
+      <Ourwork/>
     </div>
   );
 };

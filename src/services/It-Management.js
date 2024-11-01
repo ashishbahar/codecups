@@ -3,6 +3,7 @@ import ServiceHero from "../component/ServiceHero";
 import Technologies from "../component/Technologies";
 import ContactHero from "../component/ContactHero";
 import { Website } from "../component/Helper";
+import Ourwork from "../component/Ourwork";
 const ItManagement = () => {
   return (
     <div>
@@ -62,6 +63,7 @@ const ItManagement = () => {
       {/* <Sdlc /> */}
       <Technologies tabs={Website}/>
       <ContactHero />
+      <Ourwork/>
     </div>
   );
 };
