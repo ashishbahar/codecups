@@ -5,11 +5,11 @@ import Newsletter from "../component/Newsletter";
 const Footer = () => {
   return (
     <div className="p-4">
-      <div className="flex flex-col lg:flex-row justify-between space-y-8 lg:space-y-0 lg:space-x-8 p-10">
+      <div className="flex flex-col lg:flex-row justify-evenly space-y-8 lg:space-y-0 lg:space-x-8 p-10">
 
         <div className="flex flex-col  space-y-8">
 
-          <img src="../logo/logo (2).png" alt="Logo" className="w-56 h-auto md:w-38 md:h-18 " />
+          <img src="https://codecups.in/logo/logo%20(1).png" alt="Logo" className="w-56 h-auto md:w-38 md:h-18 " />
           <h1 className="text-xl font-semibold">Subscribe With Us</h1>
           <p className="">
             Sign up now and be the first to know <br />
@@ -39,14 +39,8 @@ const Footer = () => {
             </a>
           </div> */}
         </div>
-        <div className="flex flex-col lg:flex-row justify-evenly space-y-8 lg:space-y-0 lg:space-x-8">
-          <div className="flex flex-col space-y-2">
-            <h1 className="text-2xl font-semibold mb-2">Policy</h1>
-            <h2><Link to="/privacy-poicy" className="hover:underline hover:text-textBlue">Privacy Policy </Link></h2>
-            <h2><Link to="/Grievance-officer" className="hover:underline hover:text-textBlue">Refund policy</Link></h2>
-            <h2><Link to="/Refund-policy" className="hover:underline hover:text-textBlue">Falcon-C</Link></h2>
-      
-          </div>
+        <div className="flex flex-col lg:flex-row justify-evenly space-y-8 lg:space-y-0 lg:space-x-8 w-2/3">
+          
 
           <div className="flex flex-col space-y-2">
             <h1 className="text-2xl font-semibold mb-2">Services</h1>
@@ -56,6 +50,14 @@ const Footer = () => {
             <h2><Link to="/Material" className="hover:underline hover:text-textBlue">CRM Solutions and Design </Link></h2>
             <h2><Link to="/Waste" className="hover:underline hover:text-textBlue">Software Development</Link></h2>
             <h2><Link to="/Waste" className="hover:underline hover:text-textBlue">App Development </Link></h2>
+          </div>
+
+          <div className="flex flex-col space-y-2">
+            <h1 className="text-2xl font-semibold mb-2">Policy</h1>
+            <h2><Link to="/privacy-poicy" className="hover:underline hover:text-textBlue">Privacy Policy </Link></h2>
+            <h2><Link to="/Grievance-officer" className="hover:underline hover:text-textBlue">Grievance Officer</Link></h2>
+            <h2><Link to="/Refund-policy" className="hover:underline hover:text-textBlue">Refund Policy</Link></h2>
+      
           </div>
 
           <div className="flex flex-col space-y-2">
