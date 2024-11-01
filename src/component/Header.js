@@ -232,10 +232,10 @@ export default function Example() {
                     {services.slice(0, 3).map((category) => (
                       <div
                         key={category.name}
-                        className="group flex flex-col space-y-4 border-r-2 border-black-100 p-5"
+                        className="group flex flex-col space-y-4 border-r-2 border-black-100 p-5 w-full"
                       >
                         <div className="flex items-center space-x-3">
-                          <div className="h-12 w-12 rounded-lg bg-gray-50 flex items-center justify-center">
+                          <div className=" rounded-lg bg-gray-50 flex items-center justify-center">
                             <category.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
                           </div>
                           <p className="font-semibold text-gray-900">
