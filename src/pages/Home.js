@@ -75,13 +75,13 @@ const Home = () => {
                   </li>
                 </ul>
                 <Link to="/contact" className=" bg-[#3333f8dd] font-semibold duration-200 hover:bg-[#fff] border-[2px] border-[#3333f8dd] hover:text-[#3333f8dd] text-white px-[30px] md:px-[50px] py-[8px] md:py-[14px] outline-none mt-[30px] rounded-[20px]">
-                  Get Started
+                 Work With Us
                 </Link>
               </div>
             </div>
             <div className="md:p-10">
-              <div className="grid pt-10 grid-cols-1 lg:grid-cols-3  lg:gap-10 px-8">
-                <div className="flex  items-center">
+              <div className="grid pt-10 grid-cols-1 lg:grid-cols-3  lg:gap-10">
+                <div className="flex  items-center mb-4">
                   <div className=" bg-[#f3baba6c] p-5 rounded-lg">
                     <img
                       width={30}
@@ -99,7 +99,7 @@ const Home = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex  items-center">
+                <div className="flex  items-center mb-4">
                   <div className=" bg-[#f3baba6c] p-5 rounded-lg">
                     <img
                       width={40}
@@ -118,7 +118,7 @@ const Home = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex  items-center">
+                <div className="flex  items-center mb-4">
                   <div className=" bg-[#f3baba6c] p-5 rounded-lg">
                     <img
                       width={40}
@@ -177,7 +177,7 @@ const Home = () => {
                   </div>
 
                   {/* Second Row: 3 Boxes */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-4">
+                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
                     {boxes.slice(2).map((box) => (
                       <div
                         key={box.id}

@@ -44,12 +44,12 @@ const Footer = () => {
 
           <div className="flex flex-col space-y-2">
             <h1 className="text-2xl font-semibold mb-2">Services</h1>
-            <h2><Link to="/commercial" className="hover:underline hover:text-textBlue">IT Management Services  </Link></h2>
-            <h2><Link to="/Industrial" className="hover:underline hover:text-textBlue">Data Tracking Security </Link></h2>
-            <h2><Link to="/Food" className="hover:underline hover:text-textBlue">Website Development </Link></h2>
-            <h2><Link to="/Material" className="hover:underline hover:text-textBlue">CRM Solutions and Design </Link></h2>
-            <h2><Link to="/Waste" className="hover:underline hover:text-textBlue">Software Development</Link></h2>
-            <h2><Link to="/Waste" className="hover:underline hover:text-textBlue">App Development </Link></h2>
+            <h2><Link to="/it-management" className="hover:underline hover:text-textBlue">IT Management Services  </Link></h2>
+            <h2><Link to="/data-tracking" className="hover:underline hover:text-textBlue">Data Tracking Security </Link></h2>
+            <h2><Link to="/website-development" className="hover:underline hover:text-textBlue">Website Development </Link></h2>
+            <h2><Link to="/crm-Solution" className="hover:underline hover:text-textBlue">CRM Solutions and Design </Link></h2>
+            <h2><Link to="/software-development" className="hover:underline hover:text-textBlue">Software Development</Link></h2>
+            <h2><Link to="/app-development" className="hover:underline hover:text-textBlue">App Development </Link></h2>
           </div>
 
           <div className="flex flex-col space-y-2">

@@ -18,6 +18,9 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Scroll from "./component/Scroll";
 import Footer from "./pages/Footer";
+import Pricing from "./pages/Pricing";
+import FAQ from "./pages/Faq";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -39,10 +42,16 @@ const App = () => {
 
           {/* Add more routes here as needed */}
           <Route path="/about" element={<About />} /> {/* Services page route */}
+          <Route path="/pricing" element={<Pricing />} /> {/* Services page route */}
+          <Route path="/faq" element={<FAQ />} /> {/* Services page route */}
+
           <Route path="/portfolio" element={<Portfolio />} /> {/* Services page route */}
           <Route path="/Career" element={<Career />} /> {/* Services page route */}
           <Route path="/Contact" element={<Contact />} /> {/* Services page route */}
 
+
+            {/* Catch-all route for undefined paths */}
+            <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer/>
 

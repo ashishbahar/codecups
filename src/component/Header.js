@@ -32,13 +32,13 @@ const company = [
   {
     name: "About us",
     description: "Get a better understanding of your traffic",
-    href: "#",
+    href: "/about",
     icon: ChartPieIcon,
   },
   {
     name: "Our Pricing",
     description: "Speak directly to your customers",
-    href: "#",
+    href: "/pricing",
     icon: CursorArrowRaysIcon,
   },
   {
@@ -137,16 +137,14 @@ const services = [
       "  Our Pricing",
       "  Overview",
       "  New Releases",
-      "Solutions",
       "  FAQ",
     ],
     links: [
-      "food#Beverage",
-      "food#Dairy",
-      "food#Food",
-      "food#Beverage",
-      "food#Dairy",
-      "food#Food",
+      "/case-studies",
+      "/pricing",
+      "/owerveiw",
+      "/new-release",
+      "/faq",
     ],
     icon: FingerPrintIcon,
   },
@@ -179,7 +177,7 @@ export default function Example() {
         className="mx-auto flex max-w-8xl items-center justify-between p-2 lg:px-10 "
       >
         <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
+          <Link to="/" className="-m-1.5 p-1.5" onClick={handleLinkClick}>
             <span className="sr-only">CodeCups</span>
             <img
               alt="../logo/logo (1).png"
@@ -200,6 +198,7 @@ export default function Example() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Link
+          onClick={handleLinkClick}
             to="/about"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
@@ -295,6 +294,7 @@ export default function Example() {
                       to steadfast success for top globally leading brands
                     </p>
                     <Link
+                      onClick={handleLinkClick}
                       to="/portfolio"
                       className="mt-8 px-4 py-2 bg-black text-white rounded hover:bg-gray-800"
                     >
@@ -324,9 +324,10 @@ export default function Example() {
               </div>
               <div className="grid grid-cols-1 divide-x divide-gray-900/5 bg-gray-50 text-center">
                 {callsToAction.slice(1).map((item) => (
-                  <a
+                  <Link
+                  onClick={handleLinkClick}
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                   >
                     <item.icon
@@ -334,19 +335,21 @@ export default function Example() {
                       className="h-5 w-5 flex-none text-gray-400"
                     />
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </PopoverPanel>
           </Popover>
 
           <Link
+          onClick={handleLinkClick}
             to="/career"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Career
           </Link>
           <Link
+          onClick={handleLinkClick}
             to="/contact"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
@@ -371,7 +374,7 @@ export default function Example() {
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Codecups</span>
               <img
                 alt="../logo/logo (1).png"
                 src="../logo/logo (1).png"
@@ -391,6 +394,7 @@ export default function Example() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
               <Link
+                  onClick={closeMenu}
                   to="/about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
@@ -427,8 +431,7 @@ export default function Example() {
                                     <Link
                                        to={category.links[index]}
                                       className="text-gray-600 hover:text-blue-600 transition-colors"
-                                      onClick={handleLinkClick}
-                                    >
+                                      onClick={closeMenu}                                    >
                                       {item}
                                     </Link>
                                   </li>
@@ -443,12 +446,14 @@ export default function Example() {
                 </Disclosure>
            
                 <Link
+                  onClick={closeMenu}
                   to="/portfolio"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Portfolio
                 </Link>
                 <Link
+                  onClick={closeMenu}
                   to="/career"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
@@ -485,8 +490,7 @@ export default function Example() {
                                     <Link
                                        to={category.links[index]}
                                       className="text-gray-600 hover:text-blue-600 transition-colors"
-                                      onClick={handleLinkClick}
-                                    >
+                                      onClick={closeMenu}                                    >
                                       {item}
                                     </Link>
                                   </li>
@@ -500,6 +504,7 @@ export default function Example() {
                   </DisclosurePanel>
                 </Disclosure>
                 <Link
+                  onClick={closeMenu}
                   href="/contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
