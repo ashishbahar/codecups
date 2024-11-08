@@ -174,7 +174,7 @@ export default function Example() {
     <header className="bg-white border-b-2 border-gray-100 fixed w-full z-50">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-8xl items-center justify-between p-2 lg:px-10 "
+        className="mx-auto flex max-w-8xl items-center justify-between p-2 lg:px-10 px-4"
       >
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5" onClick={handleLinkClick}>
@@ -182,7 +182,7 @@ export default function Example() {
             <img
               alt="../logo/logo (1).png"
               src="../logo/logo (1).png"
-              className="h-12 w-auto"
+              className="h-12 lg:h-14 w-auto"
             />
           </Link>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Technologies = ({ tabs }) => {
   const [activeTab, setActiveTab] = React.useState(0);
@@ -6,9 +6,9 @@ const Technologies = ({ tabs }) => {
   return (
     <div className="max-w-7xl mx-auto py-12 px-6">
       <h2 className="text-3xl font-bold text-center mb-6 ">
-        We Use <span className='text-blue-600'>Technologies</span>
+        We Use <span className="text-blue-600">Technologies</span>
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-6 justify-center  mb-6 ">
+      <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-6 justify-center  gap-3 mb-6 ">
         {tabs.map((tab, index) => (
           <button
             key={index}

@@ -44,7 +44,9 @@ const HeroSection = () => {
         <div className="text-6xl font-bold">
           <Counter end={150} suffix="+" />
         </div>
-        <p className="mt-4 text-lg">Serving clients in 150+ countries worldwide</p>
+        <p className="mt-4 text-lg">
+          Serving clients in 150+ countries worldwide
+        </p>
         <div className="flex mt-4 ">
           <img
             src="./avatar (1).webp" // Replace with avatars
@@ -69,13 +71,22 @@ const HeroSection = () => {
 
       {/* Bottom Left Section */}
       <div className="relative bg-pink-400 text-white p-8 rounded-lg flex flex-col justify-center items-start lg:rounded-tr-custom-small">
-        <Link to="/crm-Solution" className="text-lg font-semibold bg-white text-pink-600 rounded-full px-4 py-2 mb-2">
+        <Link
+          to="/crm-Solution"
+          className="md:text-lg text-sm  font-semibold bg-white text-pink-600 rounded-full px-4 py-2 mb-2"
+        >
           CRM Solution
         </Link>
-        <Link to="/website-development" className="text-lg font-semibold bg-white text-pink-600 rounded-full px-4 py-2 mb-2">
+        <Link
+          to="/website-development"
+          className="md:text-lg text-sm  font-semibold bg-white text-pink-600 rounded-full px-4 py-2 mb-2"
+        >
           Web Development
         </Link>
-        <Link to="/app-development" className="text-lg font-semibold bg-white text-pink-600 rounded-full px-4 py-2">
+        <Link
+          to="/app-development"
+          className="md:text-lg text-sm font-semibold bg-white text-pink-600 rounded-full px-4 py-2"
+        >
           App Development and more
         </Link>
       </div>
@@ -93,7 +104,9 @@ const HeroSection = () => {
           <Counter end={100} suffix="%" />
         </div>
         <p className="mt-4 text-lg">
-        Delivering top-notch service quality that ensures 100% client satisfaction!        </p>
+          Delivering top-notch service quality that ensures 100%
+          client satisfaction!{" "}
+        </p>
       </div>
     </div>
   );
