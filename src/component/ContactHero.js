@@ -11,7 +11,7 @@ const ContactHero = () => {
       }}
     >
       <div
-        className="absolute inset-0 bg-gradient-to-r from-[#48287c] to-[#101819] to-[#41ba5b] opacity-90 text-white" // Gradient layer
+        className="absolute inset-0 bg-gradient-to-r from-[#48287c] to-[#101819] to-[#41ba5b] opacity-50 text-white" // Gradient layer
         style={{ zIndex: 0 }} // Make sure it's below the text
       />
       <div className="text-center" style={{ zIndex: 1 }}>
@@ -26,7 +26,7 @@ const ContactHero = () => {
 
         <Link
           to="/"
-          className=" bg-[#3333f8dd]  font-semibold duration-200 hover:bg-[#e3f0ff] border-[2px] border-[#3333f8dd] hover:text-[#3333f8dd] text-white px-10 py-3 outline-none  rounded-[20px] text-xl"
+          className=" bg-[#3333f8dd]  font-semibold duration-200 hover:bg-[#e3f0ff] border-[2px] border-[#3333f8dd] hover:text-[#3333f8dd] text-white px-10 py-3 outline-none  rounded-[10px] text-xl"
         >
           Get Started
         </Link>

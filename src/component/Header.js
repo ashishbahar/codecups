@@ -139,13 +139,7 @@ const services = [
       "  New Releases",
       "  FAQ",
     ],
-    links: [
-      "/case-studies",
-      "/pricing",
-      "/owerveiw",
-      "/new-release",
-      "/faq",
-    ],
+    links: ["/case-studies", "/pricing", "/owerveiw", "/new-release", "/faq"],
     icon: FingerPrintIcon,
   },
 ];
@@ -198,7 +192,7 @@ export default function Example() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Link
-          onClick={handleLinkClick}
+            onClick={handleLinkClick}
             to="/about"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
@@ -271,85 +265,96 @@ export default function Example() {
 
           <Popover>
             <PopoverButton
-              className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
-              onClick={() => handlePopoverToggle("Portfolio")}
+              className="relative left-0 flex items-center gap-x-1 text-md font-semibold leading-6 text-gray-900"
+              onClick={() => handlePopoverToggle("portfolio")}
             >
               Portfolio
               <ChevronDownIcon
-                aria-hidden="true"
                 className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
               />
             </PopoverButton>
 
-            <PopoverPanel
-              transition
-              className="absolute -left-8 top-full z-10  w-screen  overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-              show={activePopover === "Portfolio"}
+            <Transition
+              show={activePopover === "portfolio"}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
             >
-              <div className="p-4">
-                <div className="max-w-7xl mx-auto p-8 flex.">
-                  <div className="text-center mb-8">
-                    <h2 className="text-3xl font-bold">Enabling Innovation</h2>
-                    <p className="text-gray-600 mb-4">
-                      to steadfast success for top globally leading brands
-                    </p>
-                    <Link
-                      onClick={handleLinkClick}
-                      to="/portfolio"
-                      className="mt-8 px-4 py-2 bg-black text-white rounded hover:bg-gray-800"
-                    >
-                      View all
-                    </Link>
-                  </div>
+              <PopoverPanel className="absolute left-1/2 z-10 mt-3 flex w-screen max-w-max -translate-x-1/2 px-4 header_container">
+                <div className=" top-full z-10  w-screen  overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in">
+                  <div className="p-4">
+                    <div className="max-w-7xl mx-auto p-8 flex.">
+                      <div className="text-center mb-8">
+                        <h2 className="text-3xl font-bold">
+                          Enabling Innovation
+                        </h2>
+                        <p className="text-gray-600 mb-4">
+                          to steadfast success for top globally leading brands
+                        </p>
+                        <Link
+                          onClick={handleLinkClick}
+                          to="/portfolio"
+                          className="mt-8 px-4 py-2 bg-black text-white rounded hover:bg-gray-800"
+                        >
+                          View all
+                        </Link>
+                      </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <ClientCard
-                      logo="../client/6.png"
-                      title="A leading digital platform to offer engaging shopping experience to users"
-                    />
-                    <ClientCard
-                      logo="../client/3.png"
-                      title="A mobile app to digitalize & expand KFC's digital footprint"
-                    />
-                    <ClientCard
-                      logo="../client/4.png"
-                      title="A transforming ERP Solution for the world's largest furniture retailer"
-                    />
-                    <ClientCard
-                      logo="../client/5.png"
-                      title="A transforming ERP Solution for the world's largest furniture retailer"
-                    />
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <ClientCard
+                          logo="../client/6.png"
+                          title="A leading digital platform to offer engaging shopping experience to users"
+                        />
+                        <ClientCard
+                          logo="../client/3.png"
+                          title="A mobile app to digitalize & expand KFC's digital footprint"
+                        />
+                        <ClientCard
+                          logo="../client/4.png"
+                          title="A transforming ERP Solution for the world's largest furniture retailer"
+                        />
+                        <ClientCard
+                          logo="../client/5.png"
+                          title="A transforming ERP Solution for the world's largest furniture retailer"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 divide-x divide-gray-900/5 bg-gray-50 text-center">
+                    {callsToAction.slice(1).map((item) => (
+                      <Link
+                        onClick={handleLinkClick}
+                        key={item.name}
+                        to={item.href}
+                        className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                      >
+                        <item.icon
+                          aria-hidden="true"
+                          className="h-5 w-5 flex-none text-gray-400"
+                        />
+                        {item.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
-              </div>
-              <div className="grid grid-cols-1 divide-x divide-gray-900/5 bg-gray-50 text-center">
-                {callsToAction.slice(1).map((item) => (
-                  <Link
-                  onClick={handleLinkClick}
-                    key={item.name}
-                    to={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                  >
-                    <item.icon
-                      aria-hidden="true"
-                      className="h-5 w-5 flex-none text-gray-400"
-                    />
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </PopoverPanel>
+              </PopoverPanel>
+            </Transition>
           </Popover>
+        
 
           <Link
-          onClick={handleLinkClick}
+            onClick={handleLinkClick}
             to="/career"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Career
           </Link>
           <Link
-          onClick={handleLinkClick}
+            onClick={handleLinkClick}
             to="/contact"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
@@ -393,7 +398,7 @@ export default function Example() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-              <Link
+                <Link
                   onClick={closeMenu}
                   to="/about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
@@ -429,9 +434,10 @@ export default function Example() {
                                 {category.items.map((item, index) => (
                                   <li key={index}>
                                     <Link
-                                       to={category.links[index]}
+                                      to={category.links[index]}
                                       className="text-gray-600 hover:text-blue-600 transition-colors"
-                                      onClick={closeMenu}                                    >
+                                      onClick={closeMenu}
+                                    >
                                       {item}
                                     </Link>
                                   </li>
@@ -444,7 +450,7 @@ export default function Example() {
                     </DisclosureButton>
                   </DisclosurePanel>
                 </Disclosure>
-           
+
                 <Link
                   onClick={closeMenu}
                   to="/portfolio"
@@ -488,9 +494,10 @@ export default function Example() {
                                 {category.items.map((item, index) => (
                                   <li key={index}>
                                     <Link
-                                       to={category.links[index]}
+                                      to={category.links[index]}
                                       className="text-gray-600 hover:text-blue-600 transition-colors"
-                                      onClick={closeMenu}                                    >
+                                      onClick={closeMenu}
+                                    >
                                       {item}
                                     </Link>
                                   </li>

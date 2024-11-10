@@ -11,7 +11,7 @@ const ServiceHero = ({ backgroundImage, heading }) => {
     > 
         
       <div 
-        className="absolute inset-0 bg-gradient-to-r from-[#48287c] to-[#00c3cc] to-[#41ba5b] opacity-90 text-white" // Gradient layer
+        className="absolute inset-0 bg-blue-900 opacity-90 text-white" // Gradient layer
         style={{ zIndex: 0 }} // Make sure it's below the text
       />
      

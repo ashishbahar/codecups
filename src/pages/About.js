@@ -5,6 +5,7 @@ import Ourwork from "../component/Ourwork";
 import ContactHero from "../component/ContactHero";
 import ServiceHero from "../component/ServiceHero";
 import { Link } from "react-router-dom";
+import ContactSection from "../component/ContactSection";
 
 const About = () => {
   return (
@@ -151,6 +152,7 @@ const About = () => {
       </section>
       <Ourwork />
       <ContactHero />
+      {/* <ContactSection/> */}
     </>
   );
 };
